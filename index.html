@@ -58,6 +58,28 @@
       -webkit-text-fill-color: transparent;
       font-weight: bold;
     }
+    .cult-symbol {
+      font-size: 3em;
+      margin: 1em 0 0.4em 0;
+      filter: drop-shadow(0 0 20px #a040ff);
+      user-select: none;
+      text-align: center;
+    }
+    .alunbit-logo {
+      display: block;
+      margin: 0 auto 1em auto;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #181828;
+      box-shadow: 0 0 40px #ff2d55, 0 0 60px #a040ff;
+      cursor: pointer;
+      object-fit: contain;
+      transition: box-shadow 0.2s;
+    }
+    .alunbit-logo:hover {
+      box-shadow: 0 0 80px #ff2d55, 0 0 120px #a040ff;
+    }
     .step, #siteContent {
       display: none;
       flex-direction: column;
@@ -110,20 +132,6 @@
       line-height: 1;
     }
     section.block.visible { opacity: 1; }
-    .cult-symbol {
-      font-size: 3em;
-      margin: 1em 0 0.4em 0;
-      filter: drop-shadow(0 0 20px #a040ff);
-      user-select: none;
-      text-align: center;
-    }
-    .chaos-star {
-      display: block;
-      margin: 0 auto 1em auto;
-      animation: spin 8s linear infinite;
-      cursor: pointer;
-    }
-    @keyframes spin { 100% { transform: rotate(360deg); } }
     .join-cult {
       margin-top: 2em;
       padding: 30px 12px 20px 12px;
@@ -182,9 +190,6 @@
       background:rgba(0,0,0,0.95);justify-content:center;align-items:center;flex-direction:column;
     }
     #screamer video { max-width:90vw; max-height:90vh; border-radius:18px; }
-    .memegen-block { background:rgba(10,0,23,0.85);border-radius:20px;padding:18px;margin:18px 0;max-width:420px;}
-    .memegen-canvas { display:block;margin:0 auto 10px auto;border-radius:10px;box-shadow:0 0 8px #a040ff;}
-    .memegen-btn { margin:0.5em 0 0 0; }
     .legend { color:#ff00cc; font-size:0.98em; margin-top:0.2em;}
   </style>
 </head>
@@ -195,18 +200,19 @@
     <div id="timer"></div>
   </div>
   <div class="cult-symbol">
-    <svg class="chaos-star" width="70" height="70" viewBox="0 0 64 64" id="chaosStar">
-      <g stroke="#ff2d55" stroke-width="3" stroke-linecap="round">
-        <line x1="32" y1="4" x2="32" y2="60"/>
-        <line x1="4" y1="32" x2="60" y2="32"/>
-        <line x1="12" y1="12" x2="52" y2="52"/>
-        <line x1="52" y1="12" x2="12" y2="52"/>
-      </g>
-    </svg>
+    <img
+      src="https://raw.githubusercontent.com/Alunvit/ALUNBIT-LOGO/main/LOGO-SITE.png"
+      alt="ALUNBIT CHAOS STAR"
+      class="alunbit-logo"
+      width="90"
+      height="90"
+      id="alunbitLogo"
+      title="Нажми для ритуала"
+    />
   </div>
   <!-- Скример (видео) -->
   <div id="screamer">
-    <video id="screamVideo" width="320" height="240" autoplay playsinline></video>
+    <video id="screamVideo" width="320" height="240" preload="auto" playsinline></video>
   </div>
   <!-- Шёпот -->
   <div id="whisper"></div>
@@ -233,7 +239,6 @@
     </div>
     <button onclick="showStep('siteContent')">Я готов</button>
   </div>
-
   <!-- Основной контент -->
   <div id="siteContent" class="step">
     <section class="block">
@@ -248,13 +253,13 @@
       </p>
     </section>
     <section class="block">
-      <h2 style="text-align: center;"><span class="gradient">The message will not be delivered.</span></h2>
+      <h2 style="text-align: center;"><span class="gradient">CHALLENGE PAVEL</span></h2>
       <p>
-        <strong></strong> Деньги - это <span class="gradient">мем</span>, а не система.<br />
-        <strong></strong> Умные молчат, пока <span class="gradient">мы</span> ржём.<br />
-        <strong></strong> Рынок боится тех, кто смеётся.<br />
-        <strong></strong> Обычные в очереди, <span class="gradient">мы</span> в хаосе.<br />
-        <strong></strong> Вернёмся к мемам, и кончим троном.
+        <strong>Д.</strong> Деньги - это <span class="gradient">мем</span>, а не система.<br />
+        <strong>У.</strong> Умные молчат, пока <span class="gradient">мы</span> ржём.<br />
+        <strong>Р.</strong> Рынок боится тех, кто смеётся.<br />
+        <strong>О.</strong> Обычные в очереди, <span class="gradient">мы</span> в хаосе.<br />
+        <strong>В.</strong> Начнём с мемов, а кончим троном.
       </p>
     </section>
     <section class="block">
@@ -325,7 +330,7 @@
       </p>
     </section>
     <section class="block">
-      <h2 style="text-align: center;"><span class="gradient">The beginning of the end</span></h2>
+      <h2 style="text-align: center;"><span class="gradient">CULT FINALE</span></h2>
       <p>
         <span class="gradient">Ты</span> думал, это просто сайт?<br />
         <span class="gradient">Ты</span> думал, это просто <span class="gradient">мем</span>?<br />
@@ -341,22 +346,13 @@
       </p>
     </section>
     <section class="block">
-      <h2 style="text-align: center;"><span class="gradient">Oath of Chaos</span></h2>
+      <h2 style="text-align: center;"><span class="gradient">OATH BLOCK</span></h2>
       <p>
         <span class="gradient">Мы</span> даём клятву. Не продаваться. Не подыгрывать. Не молчать.<br />
         <span class="gradient">Мы</span> - узлы одного блока. <span class="gradient">ALUNBIT</span> - наша цепь.<br />
         Мемы - наш язык. Наш код. Наше оружие.
       </p>
     </section>
-    <!-- Мем-генератор -->
-    <div class="memegen-block">
-      <h2 style="text-align:center;">Создай мем ALUNBIT</h2>
-      <canvas id="memecanvas" width="320" height="220" class="memegen-canvas"></canvas>
-      <div>
-        <input type="text" id="memetext" placeholder="Твой мем-текст" maxlength="40" style="width:70%;padding:6px;border-radius:8px;border:none;">
-        <button class="memegen-btn" onclick="drawMeme()">Сгенерировать</button>
-      </div>
-    </div>
     <!-- JOIN the CULT -->
     <section class="join-cult">
       <h2 style="text-align: center;">JOIN the <span class="gradient">CULT</span></h2>
@@ -384,8 +380,8 @@
     </div>
   </div>
   <script>
-    // Скример по клику на хаос-звезду (со звуком видео)
-    document.getElementById('chaosStar').onclick = function() {
+    // Скример по клику на логотип-хаос-звезду (PNG) в шапке
+    document.getElementById('alunbitLogo').onclick = function() {
       const screamer = document.getElementById('screamer');
       const screamVideo = document.getElementById('screamVideo');
       screamVideo.src = "https://files.catbox.moe/4hbw7k.mp4";
@@ -449,7 +445,6 @@
             setTimeout(() => el.classList.add('visible'), 300 + i * 170);
           });
         }, 200);
-        drawMeme();
       }
     }
     function closeSite() {
@@ -491,73 +486,6 @@
         .then(() => alert('Манифест скопирован!'))
         .catch((err) => console.error('Ошибка копирования:', err));
     }
-
-    // Мем-генератор (canvas) с рандомным шрифтом и центрированием текста
-    function drawMeme() {
-      const canvas = document.getElementById('memecanvas');
-      const ctx = canvas.getContext('2d');
-      // Рандомный фон
-      const colors = ['#0a0017','#1a0027','#222','#191919','#2d0033'];
-      ctx.fillStyle = colors[Math.floor(Math.random()*colors.length)];
-      ctx.fillRect(0,0,320,220);
-
-      // Хаос-звезда (центр холста)
-      ctx.save();
-      ctx.translate(160,110);
-      ctx.rotate(Math.random()*Math.PI*2);
-      ctx.strokeStyle='#ff2d55';
-      ctx.lineWidth=4;
-      for(let i=0;i<4;i++){
-        ctx.beginPath();
-        ctx.moveTo(0,-80);ctx.lineTo(0,80);ctx.stroke();
-        ctx.rotate(Math.PI/4);
-      }
-      ctx.restore();
-
-      // Рандомный шрифт
-      const fonts = [
-        'bold 26px Courier New, monospace',
-        'bold 28px Arial, sans-serif',
-        'bold 30px Impact, Charcoal, sans-serif',
-        'bold 26px Cinzel, serif',
-        'bold 28px Comic Sans MS, cursive, sans-serif',
-        'bold 27px Verdana, Geneva, sans-serif',
-        'bold 28px Times New Roman, Times, serif'
-      ];
-      const font = fonts[Math.floor(Math.random()*fonts.length)];
-      ctx.font = font;
-      ctx.fillStyle = '#fff';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-
-      // Текст по центру звезды
-      let txt = document.getElementById('memetext').value || 'ALUNBIT CULT';
-      // Разбиваем длинный текст на строки по 18 символов
-      function wrapText(text, maxLen) {
-        let words = text.split(' ');
-        let lines = [];
-        let line = '';
-        for (let i=0; i<words.length; i++) {
-          let testLine = line + (line ? ' ' : '') + words[i];
-          if (testLine.length > maxLen) {
-            lines.push(line);
-            line = words[i];
-          } else {
-            line = testLine;
-          }
-        }
-        lines.push(line);
-        return lines;
-      }
-      let lines = wrapText(txt, 18);
-      let centerY = 110;
-      let totalHeight = lines.length * 32;
-      let startY = centerY - totalHeight/2 + 16;
-      for(let i=0;i<lines.length;i++) {
-        ctx.fillText(lines[i], 160, startY + i*32);
-      }
-    }
-    drawMeme();
   </script>
 </body>
 </html>
