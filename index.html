@@ -365,7 +365,6 @@
       </ul>
       <div class="button-container">
         <button onclick="generateNick()">Ник</button>
-        <button onclick="copyManifest()">Манифест</button>
         <a href="https://t.me/Alunvit_Hr1" target="_blank"><button>Заявка</button></a>
       </div>
       <p>
@@ -478,14 +477,6 @@
         .then(svg => { document.getElementById('avatar').innerHTML = svg; });
     }
     updateAvatar('HAUSLORD');
-
-    // Копирование манифеста
-    function copyManifest() {
-      navigator.clipboard
-        .writeText('https://example.com/manifest')
-        .then(() => alert('Манифест скопирован!'))
-        .catch((err) => console.error('Ошибка копирования:', err));
-    }
   </script>
 </body>
 </html>
